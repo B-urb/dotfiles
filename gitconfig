@@ -1,0 +1,7 @@
+[user]
+	name = Björn Urban
+	email = burban@inovex.de
+[credential]
+	helper = store
+[core]
+	editor = vim

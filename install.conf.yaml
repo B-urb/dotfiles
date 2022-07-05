@@ -1,0 +1,60 @@
+- clean: ['~','kube']
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+      force: true
+    ~/.kube:
+      force: true
+      recursive: true
+    ~/.ssh:
+      force : true
+    ~/Library/Application\ Support/:
+      force: true
+- link:
+    ~/.profile: profile
+    ~/.bashrc: bashrc
+    ~/.bash_logout: bash_logout
+    ~/.gitconfig: gitconfig
+    ~/.ssh/config:
+        path: ssh/config
+        create: true
+    ~/.zshrc: zshrc
+    ~/.config/i3:
+        if: '[ `uname` = Linux ]'
+        path: config/i3/
+        create: true
+    ~/.kube/config:
+        path: kube/config
+        create: true
+    ~/.ideavimrc: ideavimrc
+#    ~/Library/Application\ Support/JetBrains/:
+#        if: '[ `uname` = Darwin ]'
+#        path: JetBrains/
+#        create: true
+#        force : true
+#    ~/.config/JetBrains:
+#        if: '[ `uname` = Linux ]'
+#        path: JetBrains/
+#        create: true
+    ~/.config/starship.toml: starship.toml
+    ~/.gradle/gradle.properties: gradle.properties
+    ~/.config/yabai:
+        if: '[ `uname` = Darwin ]'
+        path: config/yabai/
+        create: true
+    ~/.config/skhd: 
+        if: '[ `uname` = Darwin ]'
+        path: config/skhd/
+        create: true
+    ~/.config/spacebar:
+        if: '[ `uname` = Darwin ]'
+        path: config/spacebar/
+        create: true
+    ~/.config/sketchybar:
+        if: '[ `uname` = Darwin ]'
+        path: config/sketchybar/
+        create: true
+
+

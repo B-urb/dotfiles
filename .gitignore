@@ -1,0 +1,5 @@
+kube/*
+!kube/*/
+kube/clusters/*
+!kube/clusters/*.sh
+gradle.properties
