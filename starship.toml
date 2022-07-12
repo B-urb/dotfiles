@@ -1,12 +1,12 @@
 [kubernetes]
-format = 'on [⛵ $context \($namespace\)](dimmed green) '
+format = 'on [⛵ $context \($namespace\)](white bg:red) '
 disabled = false
 [kubernetes.context_aliases]
 "dev-mips-ql" = "mips"
 "minikube" = "mk"
 "dev-meps" = "meps"
 [java]
-disabled = true
+disabled = false
 [kotlin]
-disabled = true
+disabled = false
 

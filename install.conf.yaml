@@ -1,3 +1,7 @@
+- shell:
+  - command: [cd kube/clusters && ./merge_clusters.sh]
+    stdout: true
+    stderr: true
 - clean: ['~','kube']
 - clean:
     ~/:

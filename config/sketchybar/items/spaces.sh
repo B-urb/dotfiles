@@ -23,20 +23,20 @@ sketchybar --add   space          space_template left                \
            --set   spaces_1.label label=spc                          \
                                   label.width=38                     \
                                   label.align=center                 \
-                                  associated_display=1               \
+                                  associated_display=0               \
                                   position=left                      \
                                   drawing=on                         \
                                                                      \
-           --clone spaces_1.code  space_template                     \
-           --set   spaces_1.code  associated_space=1                 \
-                                  icon=$SPACES_CODE                  \
+           --clone spaces_1.term  space_template                     \
+           --set   spaces_1.term  associated_space=1                 \
+                                  icon=$SPACES_TERM                  \
                                   icon.highlight_color=$GREEN        \
                                   icon.background.color=$GREEN       \
                                   drawing=on                         \
                                                                      \
-           --clone spaces_1.tex   space_template                     \
-           --set   spaces_1.tex   associated_space=2                 \
-                                  icon=$SPACES_TEX                   \
+           --clone spaces_1.code  space_template                     \
+           --set   spaces_1.code  associated_space=2                 \
+                                  icon=$SPACES_CODE                   \
                                   icon.highlight_color=$ORANGE       \
                                   icon.background.color=$ORANGE      \
                                   drawing=on                         \
@@ -57,9 +57,9 @@ sketchybar --add   space          space_template left                \
                                                                      \
            --add   bracket        spaces_1                           \
                                   spaces_1.label                     \
+				  spaces_1.term		  	     \
                                   spaces_1.code                      \
                                   spaces_1.web                       \
-                                  spaces_1.tex                       \
                                   spaces_1.idle                      \
                                                                      \
            --set   space_template associated_display=2               \
@@ -71,30 +71,14 @@ sketchybar --add   space          space_template left                \
                                   label.align=center                 \
                                   position=left                      \
                                   drawing=on                         \
-                                                                     \
-           --clone spaces_2.misc  space_template                     \
-           --set   spaces_2.misc  associated_space=5                 \
-                                  icon=$SPACES_MISC                  \
-                                  icon.highlight_color=$GREEN        \
-                                  icon.background.color=$GREEN       \
+           --clone spaces_2.chat space_template                     \
+           --set   spaces_2.chat associated_space=9                 \
+                                  icon=$SPACES_CHAT                 \
+                                  icon.highlight_color=$YELLOW       \
+                                  icon.background.color=$YELLOW      \
                                   drawing=on                         \
-                                                                     \
-           --clone spaces_2.doc   space_template                     \
-           --set   spaces_2.doc   associated_space=6                 \
-                                  icon=$SPACES_DOC                   \
-                                  icon.highlight_color=$ORANGE       \
-                                  icon.background.color=$ORANGE      \
-                                  drawing=on                         \
-                                                                     \
-           --clone spaces_2.help  space_template                     \
-           --set   spaces_2.help  associated_space=7                 \
-                                  icon=$SPACES_HELP                  \
-                                  icon.highlight_color=$BLUE         \
-                                  icon.background.color=$BLUE        \
-                                  drawing=on                         \
-                                                                     \
            --clone spaces_2.music space_template                     \
-           --set   spaces_2.music associated_space=8                 \
+           --set   spaces_2.music associated_space=10                 \
                                   icon=$SPACES_MUSIC                 \
                                   icon.highlight_color=$YELLOW       \
                                   icon.background.color=$YELLOW      \
@@ -102,7 +86,33 @@ sketchybar --add   space          space_template left                \
                                                                      \
            --add   bracket        spaces_2                           \
                                   spaces_2.label                     \
-                                  spaces_2.misc                      \
-                                  spaces_2.doc                       \
-                                  spaces_2.help                      \
+				  spaces_2.chat			      \
                                   spaces_2.music
+
+
+
+
+#                                  spaces_2.misc                      \
+#                                  spaces_2.doc                       \
+#                                  spaces_2.help                      \
+#           --clone spaces_2.misc  space_template                     \
+#           --set   spaces_2.misc  associated_space=5                 \
+#                                  icon=$SPACES_MISC                  \
+#                                  icon.highlight_color=$GREEN        \
+#                                  icon.background.color=$GREEN       \
+#                                  drawing=on                         \
+#                                                                     \
+#           --clone spaces_2.doc   space_template                     \
+#           --set   spaces_2.doc   associated_space=6                 \
+#                                  icon=$SPACES_DOC                   \
+#                                  icon.highlight_color=$ORANGE       \
+#                                  icon.background.color=$ORANGE      \
+#                                  drawing=on                         \
+#                                                                     \
+#           --clone spaces_2.help  space_template                     \
+#           --set   spaces_2.help  associated_space=7                 \
+#                                  icon=$SPACES_HELP                  \
+#                                  icon.highlight_color=$BLUE         \
+#                                  icon.background.color=$BLUE        \
+#                                  drawing=on                         \
+#                                                                     \

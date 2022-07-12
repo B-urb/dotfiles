@@ -113,6 +113,8 @@ alias res="source ~/.zshrc"
 alias ls="lsd -A"
 # alias cat="batcat"
 alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
+alias python="python3"
+
 
 K9S_EDITOR=nano
 VAULT_ADDR=https://vault.smart-building.inovex.io
@@ -142,22 +144,8 @@ function srcenv(){
 export $(grep -v '^#' "$*" | xargs)
 }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/burban/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/burban/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/burban/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/burban/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-
+# export PATH="/opt/homebrew/anaconda3/bin:$PATH"  # commented out by conda initialize
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
@@ -166,4 +154,20 @@ eval "$(starship init zsh)"
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
