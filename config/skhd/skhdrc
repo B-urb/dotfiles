@@ -35,7 +35,7 @@ cmd + lshift + alt + ctrl - y : yabai -m window --swap west
 
 ## rotate tree 90
 cmd + lshift + alt + ctrl - r : yabai -m space --rotate 90
-
+cmd + lshift + alt + ctrl - f : yabai -m window --toggle zoom-fullscreen
 
 #Layouts
 cmd + lshift + alt + ctrl - e : yabai -m space --layout bsp

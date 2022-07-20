@@ -28,7 +28,8 @@ yabai -m rule --add app="Slack" space=9
 yabai -m rule --add app="Iterm2" space=1
 yabai -m rule --add app="IntelliJ IDEA" space=2
 yabai -m rule --add app="Firefox" space=3
-yabai -m rule --add app="^Spotify$" space=10
+yabai -m rule --add app="Spotify" space=10
+yabai -m rule --add app="Microsoft To Do" space=8
 
 
 # float system preferences. Most of these just diable Yabai form resizing them.
