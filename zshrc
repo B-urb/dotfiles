@@ -114,7 +114,7 @@ alias ls="lsd -A"
 # alias cat="batcat"
 alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
 alias python="python3"
-
+eval $(thefuck --alias)
 
 K9S_EDITOR=nano
 VAULT_ADDR=https://vault.smart-building.inovex.io
