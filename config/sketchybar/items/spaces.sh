@@ -5,7 +5,6 @@ sketchybar --add   space          space_template left                \
                                   label.drawing=off                  \
                                   drawing=off                        \
                                   updates=on                         \
-                                  associated_display=1               \
                                   label.font="$FONT:Black:13.0"      \
                                   icon.font="$FONT:Bold:17.0"        \
                                   script="$PLUGIN_DIR/space.sh"      \
@@ -19,100 +18,79 @@ sketchybar --add   space          space_template left                \
                                   icon.background.y_offset=-13       \
                                   click_script="$SPACE_CLICK_SCRIPT" \
                                                                      \
-           --clone spaces_1.label label_template                     \
-           --set   spaces_1.label label=spc                          \
+           --clone spaces.label label_template                     \
+           --set   spaces.label label=idle                          \
                                   label.width=38                     \
                                   label.align=center                 \
-                                  associated_display=0               \
                                   position=left                      \
                                   drawing=on                         \
-                                                                     \
-           --clone spaces_1.term  space_template                     \
-           --set   spaces_1.term  associated_space=1                 \
+           --clone spaces.term  space_template                     \
+           --set   spaces.term  associated_space=1                 \
                                   icon=$SPACES_TERM                  \
                                   icon.highlight_color=$GREEN        \
                                   icon.background.color=$GREEN       \
                                   drawing=on                         \
                                                                      \
-           --clone spaces_1.code  space_template                     \
-           --set   spaces_1.code  associated_space=2                 \
+           --clone spaces.code  space_template                     \
+           --set   spaces.code  associated_space=2                 \
                                   icon=$SPACES_CODE                   \
                                   icon.highlight_color=$ORANGE       \
                                   icon.background.color=$ORANGE      \
                                   drawing=on                         \
                                                                      \
-           --clone spaces_1.web   space_template                     \
-           --set   spaces_1.web   associated_space=3                 \
+           --clone spaces.web   space_template                     \
+           --set   spaces.web   associated_space=3                 \
                                   icon=$SPACES_WEB                   \
                                   icon.highlight_color=$BLUE         \
                                   icon.background.color=$BLUE        \
                                   drawing=on                         \
                                                                      \
-           --clone spaces_1.idle  space_template                     \
-           --set   spaces_1.idle  associated_space=4                 \
+                                                                     \
+           --clone spaces.chat space_template                     \
+           --set   spaces.chat associated_space=4                 \
+                                  icon=$SPACES_CHAT                 \
+                                  icon.highlight_color=$YELLOW       \
+                                  icon.background.color=$YELLOW      \
+                                  drawing=on                         \
+           --clone spaces.todo space_template                     \
+           --set   spaces.todo associated_space=5                 \
+                                  icon=$SPACES_TODO                  \
+                                  icon.highlight_color=$YELLOW       \
+                                  icon.background.color=$YELLOW      \
+                                  drawing=on                         \
+                                                                     \
+           --clone spaces.idle1  space_template                     \
+           --set   spaces.idle1 associated_space=6                 \
+                                  icon=$SPACES_IDLE                  \
+                                  icon.highlight_color=$YELLOW       \
+                                  icon.background.color=$YELLOW      \
+                                  drawing=on                         \
+           --clone spaces.idle2  space_template                     \
+           --set   spaces.idle2  associated_space=7                 \
+                                  icon=$SPACES_IDLE                  \
+                                  icon.highlight_color=$YELLOW       \
+                                  icon.background.color=$YELLOW      \
+                                  drawing=on                         \
+           --clone spaces.idle3  space_template                     \
+           --set   spaces.idle3  associated_space=8                 \
                                   icon=$SPACES_IDLE                  \
                                   icon.highlight_color=$YELLOW       \
                                   icon.background.color=$YELLOW      \
                                   drawing=on                         \
                                                                      \
-           --add   bracket        spaces_1                           \
-                                  spaces_1.label                     \
-				  spaces_1.term		  	     \
-                                  spaces_1.code                      \
-                                  spaces_1.web                       \
-                                  spaces_1.idle                      \
+           --add   bracket        idle_spaces                        \
+                                  spaces.idle1                      \
+                                  spaces.idle2                      \
+                                  spaces.idle3                      \
+	  --set         idle_spaces background.color=0xffffffff \
+                                        background.corner_radius=4  \
+                                        background.height=25 \
                                                                      \
-           --set   space_template associated_display=2               \
                                                                      \
-           --clone spaces_2.label label_template                     \
-           --set   spaces_2.label label=spc                          \
-                                  associated_display=2               \
-                                  label.width=45                     \
-                                  label.align=center                 \
-                                  position=left                      \
-                                  drawing=on                         \
-           --clone spaces_2.chat space_template                     \
-           --set   spaces_2.chat associated_space=9                 \
-                                  icon=$SPACES_CHAT                 \
-                                  icon.highlight_color=$YELLOW       \
-                                  icon.background.color=$YELLOW      \
-                                  drawing=on                         \
-           --clone spaces_2.music space_template                     \
-           --set   spaces_2.music associated_space=10                 \
+           --clone spaces.music space_template                     \
+           --set   spaces.music associated_space=10                 \
                                   icon=$SPACES_MUSIC                 \
                                   icon.highlight_color=$YELLOW       \
                                   icon.background.color=$YELLOW      \
                                   drawing=on                         \
                                                                      \
-           --add   bracket        spaces_2                           \
-                                  spaces_2.label                     \
-				  spaces_2.chat			      \
-                                  spaces_2.music
-
-
-
-
-#                                  spaces_2.misc                      \
-#                                  spaces_2.doc                       \
-#                                  spaces_2.help                      \
-#           --clone spaces_2.misc  space_template                     \
-#           --set   spaces_2.misc  associated_space=5                 \
-#                                  icon=$SPACES_MISC                  \
-#                                  icon.highlight_color=$GREEN        \
-#                                  icon.background.color=$GREEN       \
-#                                  drawing=on                         \
-#                                                                     \
-#           --clone spaces_2.doc   space_template                     \
-#           --set   spaces_2.doc   associated_space=6                 \
-#                                  icon=$SPACES_DOC                   \
-#                                  icon.highlight_color=$ORANGE       \
-#                                  icon.background.color=$ORANGE      \
-#                                  drawing=on                         \
-#                                                                     \
-#           --clone spaces_2.help  space_template                     \
-#           --set   spaces_2.help  associated_space=7                 \
-#                                  icon=$SPACES_HELP                  \
-#                                  icon.highlight_color=$BLUE         \
-#                                  icon.background.color=$BLUE        \
-#                                  drawing=on                         \
-#                                                                     \

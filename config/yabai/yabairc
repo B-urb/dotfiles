@@ -12,16 +12,16 @@ yabai -m config external_bar               all:0:39
 yabai -m space 1 --label term
 yabai -m space 2 --label code
 yabai -m space 3 --label www
-yabai -m space 4 --label four
-yabai -m space 5 --label five
+yabai -m space 4 --label chat
+yabai -m space 5 --label todo
 yabai -m space 6 --label six
 yabai -m space 7 --label seven
-yabai -m space 8 --label todo
-yabai -m space 9 --label chat
+yabai -m space 8 --label eight
+yabai -m space 9 --label nine
 yabai -m space 10 --label music
 
 #specific layout for chat space
-yabai -m config --space 9 layout stack
+yabai -m config --space chat layout stack
 
 
 #assign apps to certain space
@@ -32,7 +32,7 @@ yabai -m rule --add app="IntelliJ IDEA" space=code
 yabai -m rule --add app="Firefox" space=www
 yabai -m rule --add app="Spotify" space=music
 yabai -m rule --add app="Microsoft To Do" space=todo
-
+yabai -m rule --add app="Signal" space=chat
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off

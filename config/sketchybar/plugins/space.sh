@@ -7,7 +7,7 @@ if [ "$NAME" != "space_template" ]; then
 fi
 
 if [ "$SELECTED" = "true" ]; then
-  args+=(--set spaces_$DID.label label=${NAME#"spaces_$DID."} \
+  args+=(--set spaces.label label=${NAME#"spaces."} \
          --set $NAME icon.background.y_offset=-12              )
 else
   args+=(--set $NAME icon.background.y_offset=-22)
