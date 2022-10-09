@@ -67,19 +67,19 @@ cmd + lshift + alt + ctrl - right : yabai -m window --focus east
 cmd + lshift + alt + ctrl + rshift - 1 : yabai -m window --space term
 cmd + lshift + alt + ctrl + rshift - 2 : yabai -m window --space code
 cmd + lshift + alt + ctrl + rshift - 3 : yabai -m window --space www
-cmd + lshift + alt + ctrl + rshift - 4 : yabai -m window --space four
-cmd + lshift + alt + ctrl + rshift - 5 : yabai -m window --space five
+cmd + lshift + alt + ctrl + rshift - 4 : yabai -m window --space chat
+cmd + lshift + alt + ctrl + rshift - 5 : yabai -m window --space todo
 cmd + lshift + alt + ctrl + rshift - 6 : yabai -m window --space six
 cmd + lshift + alt + ctrl + rshift - 7 : yabai -m window --space seven
 cmd + lshift + alt + ctrl + rshift - 8 : yabai -m window --space todo
 cmd + lshift + alt + ctrl + rshift - 9 : yabai -m window --space chat
 cmd + lshift + alt + ctrl + rshift - 0 : yabai -m window --space music
 
-cmd + lshift + alt + ctrl + rshift - left : ./stackwindow.sh west #yabai -m window --warp west #|| yabai -m window --swap west #|| $(yabai -m window --display west; yabai -m display --focus west)
-cmd + lshift + alt + ctrl + rshift - down : ./stackwindow.sh south #yabai -m window --warp south #|| yabai -m window --swap south #|| $(yabai -m window --display south; yabai -m display --focus south 
-cmd + lshift + alt + ctrl + rshift - up : ./stackwindow.sh north #yabai -m window --warp north #|| yabai -m window --swap north #|| $(yabai -m window --display north; yabai -m display --focus north)
-cmd + lshift + alt + ctrl + rshift - right : ./stackwindow.sh east #yabai -m window --warp east #|| yabai -m window --swap east #|| $(yabai -m window --display east; yabai -m display --focus east)
 
+cmd + lshift + alt + ctrl + rshift - left : ~/.config/skhd/stackwindow.sh west #yabai -m window --warp west #|| yabai -m window --swap west #|| $(yabai -m window --display west; yabai -m display --focus west)
+cmd + lshift + alt + ctrl + rshift - down : ~/.config/skhd/stackwindow.sh south #yabai -m window --warp south #|| yabai -m window --swap south #|| $(yabai -m window --display south; yabai -m display --focus south 
+cmd + lshift + alt + ctrl + rshift - up : ~/.config/skhd/stackwindow.sh north #yabai -m window --warp north #|| yabai -m window --swap north #|| $(yabai -m window --display north; yabai -m display --focus north)
+cmd + lshift + alt + ctrl + rshift - right : ~/.config/skhd/stackwindow.sh east #yabai -m window --warp east #|| yabai -m window --swap east #|| $(yabai -m window --display east; yabai -m display --focus east)
 
 
 ################################################################

@@ -22,28 +22,6 @@ zinit light-mode for \
 
 
 ### End of Zinit's installer chunk
-
-##setup history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt INC_APPEND_HISTORY
-
-zinit for \
-    light-mode zsh-users/zsh-autosuggestions  \
-zdharma-continuum/fast-syntax-highlighting \
-                zdharma-continuum/history-search-multi-word \
-                marlonrichert/zsh-autocomplete 
-
-zinit light junegunn/fzf
-zinit load Dbz/kube-aliases
-#zinit load ahmetb/kubectx
-
-
-zinit from'gh-r' as'program' for \
-    id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
-    id-as'kubens' bpick'kubens*' ahmetb/kubectx \
-
 #ZSH_THEME="agnoster" # (this is one of the fancy ones)
 
 
@@ -88,11 +66,34 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 
 ## Zinit Setting
 # Must Load OMZ Git library
-#zinit snippet OMZL::git.zsh
+# zinit snippet OMZL::git.zsh
 
 # Load Git plugin from OMZ
-#zinit snippet OMZP::git
-#zinit cdclear -q # <- forget completions provided up to this moment
+zinit snippet OMZP::git
+# zinit cdclear -q # <- forget completions provided up to this moment
+
+
+##setup history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY
+
+zinit light junegunn/fzf
+zinit light Aloxaf/fzf-tab
+zinit for \
+    light-mode zsh-users/zsh-autosuggestions  \
+zdharma-continuum/fast-syntax-highlighting \
+                zdharma-continuum/history-search-multi-word \
+                marlonrichert/zsh-autocomplete 
+
+zinit load Dbz/kube-aliases
+#zinit load ahmetb/kubectx
+
+
+zinit from'gh-r' as'program' for \
+    id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
+    id-as'kubens' bpick'kubens*' ahmetb/kubectx \
 
 #setopt promptsubst
 
