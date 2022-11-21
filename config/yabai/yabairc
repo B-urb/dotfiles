@@ -33,7 +33,11 @@ yabai -m rule --add app="Firefox" space=www
 yabai -m rule --add app="Spotify" space=music
 yabai -m rule --add app="Microsoft To Do" space=todo
 yabai -m rule --add app="Signal" space=chat
+yabai -m rule --add app="Logseq" space=todo
+yabai -m rule --add app="Prusa Slicer" space=six
 
+
+yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off

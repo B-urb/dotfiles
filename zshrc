@@ -116,8 +116,7 @@ alias ls="lsd -A"
 alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
 alias python="python3"
 eval $(thefuck --alias)
-
-K9S_EDITOR=nano
+alias vim="nvim"
 VAULT_ADDR=https://vault.smart-building.inovex.io
 VAULT_TOKEN=s.tOn5oFLq6NGRwvGJcJS4oKWh
 QI_SDK_PREFIX=~/tools/naoqi
@@ -172,3 +171,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export K9S_EDITOR=nvim
+export EDITOR=nvim

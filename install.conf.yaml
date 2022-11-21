@@ -32,6 +32,9 @@
     ~/.kube/config:
         path: kube/config
         create: true
+    ~/.config/nvim:
+        path: config/nvim
+        create: true
     ~/.ideavimrc: ideavimrc
 #    ~/Library/Application\ Support/JetBrains/:
 #        if: '[ `uname` = Darwin ]'
