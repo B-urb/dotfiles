@@ -102,11 +102,10 @@ zinit from'gh-r' as'program' for \
 ###### PLUGINS ######
 #zinit light spaceship-prompt/spaceship-prompt
 
-bindkey '^[[1;5C' forward-word 
-bindkey '^[[1;5D' backward-kill-word
-bindkey '^[^[[C' forward-word   #control left
-bindkey '^[^[[D' backward-kill-word
-
+#bindkey '^[[1;5C' forward-word 
+#bindkey '^[[1;5D' backward-kill-word
+#bindkey '^[^[[C' forward-word   #control left
+#bindkey '^[^[[D' backward-kill-word
 
 #aliases and functions
 alias kb="kubectl"
@@ -142,6 +141,13 @@ pbcopy < "${1:-/dev/stdin}"
 # use to import variables from .env file in local shell
 function srcenv(){
 export $(grep -v '^#' "$*" | xargs)
+}
+
+fuzzy_search() {
+  context_lines=${1:-5}
+  input=$(cat)
+  selected_line=$(echo "$input" | awk -v context_lines=$context_lines 'BEGIN{ORS="\n\n"}{print NR-1 ":", $0}' | fzf --preview "echo {}; awk -v line=$(echo {} | cut -d':' -f1) -v context_lines=$context_lines 'NR >= line-context_lines && NR <= line+context_lines {print \$0}'" | cut -d':' -f1)
+  awk -v line=$selected_line -v context_lines=$context_lines 'NR >= line-context_lines && NR <= line+context_lines {print $0}' <<< "$input" | less
 }
 
 

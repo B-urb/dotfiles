@@ -22,7 +22,7 @@ yabai -m space 10 --label music
 
 #specific layout for chat space
 yabai -m config --space chat layout stack
-
+yabai -m config --space www layout stack
 
 #assign apps to certain space
 yabai -m rule --add app="Microsoft Teams" space=chat
@@ -30,28 +30,30 @@ yabai -m rule --add app="Slack" space=chat
 yabai -m rule --add app="Iterm2" space=term
 yabai -m rule --add app="IntelliJ IDEA" space=code
 yabai -m rule --add app="Firefox" space=www
+yabai -m rule --add app="Saafari" space=www
 yabai -m rule --add app="Spotify" space=music
 yabai -m rule --add app="Microsoft To Do" space=todo
 yabai -m rule --add app="Signal" space=chat
 yabai -m rule --add app="Logseq" space=todo
-yabai -m rule --add app="Prusa Slicer" space=six
+yabai -m rule --add app="Discord" space=chat
+yabai -m rule --add app="Calendar" space=todo
 
 
-yabai -m rule --add subrole="AXDialog" layer=above manage=off
+#yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
+yabai -m rule --add app="Prusa Slicer" manage=off
 yabai -m rule --add app="^Parallels Desktop$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Keka$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Path Finder$" manage=off
 yabai -m rule --add app="^TeamViewer$" sticky=off layer=above manage=off
 yabai -m rule --add app="Fantastical" manage=off
+yabai -m rule --add app="^Finder$" border=off
 #yabai -m rule --add app="^Spotify$" manage=off
 #yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Age of Empires$" manage=off
@@ -68,7 +70,7 @@ yabai -m rule --add app="^Private Internet Access$" manage=off
 ## Some random global settings
 #yabai -m config focus_follows_mouse          autofocus
 #yabai -m config focus_follows_mouse          on
-yabai -m config mouse_follows_focus           on
+# yabai -m config mouse_follows_focus           on
 # New window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
