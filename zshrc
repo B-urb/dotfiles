@@ -179,3 +179,4 @@ unset __conda_setup
 
 export K9S_EDITOR=nvim
 export EDITOR=nvim
+export PICO_SDK_PATH="$HOME/Private/Development/embedded/pico-sdk"

@@ -63,5 +63,13 @@
         if: '[ `uname` = Darwin ]'
         path: config/sketchybar/
         create: true
+    ~/Library/Application\ Support/idasen-controller:
+        if: '[ `uname` = Darwin ]'
+        path: idasen-controller
+        create: true
+    ~/.config/idasen-controller:
+        if: '[ `uname` = Linux ]'
+        path: idasen-controller
+        create: true
 
 
