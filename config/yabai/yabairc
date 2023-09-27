@@ -22,7 +22,7 @@ yabai -m space 10 --label music
 
 #specific layout for chat space
 yabai -m config --space chat layout stack
-yabai -m config --space www layout stack
+
 
 #assign apps to certain space
 yabai -m rule --add app="Microsoft Teams" space=chat
@@ -30,13 +30,16 @@ yabai -m rule --add app="Slack" space=chat
 yabai -m rule --add app="Iterm2" space=term
 yabai -m rule --add app="IntelliJ IDEA" space=code
 yabai -m rule --add app="Firefox" space=www
-yabai -m rule --add app="Saafari" space=www
+yabai -m rule --add app="Safari" space=www
+yabai -m rule --add app="Arc" space=www
+yabai -m rule --add app="Chrome" space=www
 yabai -m rule --add app="Spotify" space=music
 yabai -m rule --add app="Microsoft To Do" space=todo
 yabai -m rule --add app="Signal" space=chat
 yabai -m rule --add app="Logseq" space=todo
 yabai -m rule --add app="Discord" space=chat
 yabai -m rule --add app="Calendar" space=todo
+yabai -m rule --add app="Notion" space=todo
 
 
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
