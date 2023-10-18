@@ -85,6 +85,7 @@ brew "lsd"
 brew "mariadb", restart_service: true
 brew "maven"
 brew "molten-vk"
+brew "navi"
 brew "neovim"
 brew "netcdf"
 brew "numpy"
