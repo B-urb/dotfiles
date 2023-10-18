@@ -110,8 +110,13 @@ zinit from'gh-r' as'program' for \
 #aliases and functions
 alias kb="kubectl"
 alias res="source ~/.zshrc"
-alias ls="lsd -A"
-# alias cat="batcat"
+alias ls="exa"
+alias htop="bpytop"
+alias ping="gping"
+alias du="dua"
+alias dig="dog"
+alias cat="bat"
+alias rm="rip"
 alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
 alias python="python3"
 eval $(thefuck --alias)

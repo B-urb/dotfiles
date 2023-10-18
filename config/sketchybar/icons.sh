@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # General Icons
 LOADING=􀖇
@@ -6,32 +6,8 @@ APPLE=􀣺
 PREFERENCES=􀺽
 ACTIVITY=􀒓
 LOCK=􀒳
-MAIL=􀍜
-MAIL_OPEN=􀍜
-MIC=􀊱
-MIC_MUTE=􀊳
 BELL=􀋚
 BELL_DOT=􀝗
-PACKAGES=􀐛
-TICK=✔︎
-MEMORY=􀧖
-
-# Primary Spaces
-SPACES_TERM=􀪏
-SPACES_CODE=􀤙
-SPACES_WEB=􀆪
-SPACES_TODO=􀷾
-SPACES_IDLE=􀊆
-
-# Secondary Spaces
-SPACES_CHAT=􀌩
-SPACES_MUSIC=􀑬
-
-# Network Icons
-NETWORK_UP=􀅃
-NETWORK_DOWN=􀅄
-NETWORK_VPN=􀞚
-NETWORK_NO_VPN=􀞞
 
 # Git Icons
 GIT_ISSUE=􀍷
@@ -54,5 +30,21 @@ YABAI_PARENT_ZOOM=􀥃
 YABAI_FLOAT=􀢌
 YABAI_GRID=􀧍
 
-# svim Icons
-VIM=
+# Battery Icons
+BATTERY_100=􀛨
+BATTERY_75=􀺸
+BATTERY_50=􀺶
+BATTERY_25=􀛩
+BATTERY_0=􀛪
+BATTERY_CHARGING=􀢋
+
+# Volume Icons
+VOLUME_100=􀊩
+VOLUME_66=􀊧
+VOLUME_33=􀊥
+VOLUME_10=􀊡
+VOLUME_0=􀊣
+
+# WiFi
+WIFI_CONNECTED=􀙇
+WIFI_DISCONNECTED=􀙈
