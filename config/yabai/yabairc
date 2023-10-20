@@ -5,7 +5,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 # bsp or float (default: bsp)
 yabai -m config layout bsp
 
-
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[1].id // .[0].jd' )"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m config external_bar               all:0:39
 
@@ -14,11 +14,7 @@ yabai -m space 2 --label code
 yabai -m space 3 --label www
 yabai -m space 4 --label chat
 yabai -m space 5 --label todo
-yabai -m space 6 --label six
-yabai -m space 7 --label seven
-yabai -m space 8 --label eight
-yabai -m space 9 --label nine
-yabai -m space 10 --label music
+yabai -m space 6 --label music
 
 #specific layout for chat space
 yabai -m config --space chat layout stack
@@ -57,7 +53,7 @@ yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Activity Monitor$"  manage=off
 yabai -m rule --add app="^TeamViewer$"  manage=off
 yabai -m rule --add app="Fantastical" manage=off
-yabai -m rule --add app="^Finder$" border=off
+yabai -m rule --add app="^Finder$"
 #yabai -m rule --add app="^Spotify$" manage=off
 #yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Age of Empires$" manage=off
@@ -77,7 +73,7 @@ yabai -m rule --add app="^Private Internet Access$" manage=off
 # yabai -m config mouse_follows_focus           on
 # New window spawns to the right if vertical split, or bottom if horizontal split
 #yabai -m config window_placement second_child
-yabai -m config window_topmost off
+#yabai -m config window_topmost off
 #yabai -m config window_shadow float
 #yabai -m config window_opacity off
 yabai -m config window_shadow off
@@ -91,11 +87,15 @@ yabai -m config normal_window_opacity 0.9
 #yabai -m config window_border off
 
 ## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
-yabai -m config window_border on
-yabai -m config window_border_width 2
-yabai -m config active_window_border_color 0xFF40FF00
-yabai -m config normal_window_border_color 0x00FFFFFF
-yabai -m config insert_feedback_color        0xffd75f5f
+#yabai -m config window_border on
+#yabai -m config window_border_width 2
+#yabai -m config active_window_border_color 0xFF40FF00
+#yabai -m config normal_window_border_color 0x00FFFFFF
+#yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config window_opacity                on
+yabai -m config active_window_opacity         1.0
+yabai -m config normal_window_opacity         0.9
+yabai -m config window_opacity_duration       0.0
 
 ## some other settings
 yabai -m config auto_balance off
