@@ -5,7 +5,10 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 # bsp or float (default: bsp)
 yabai -m config layout bsp
 
-yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[1].id // .[0].jd' )"
+yabai -m signal --add event=space_changed action='~/.config/yabai/focus_space_window.sh $YABAI_SPACE_ID'
+#yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[1].id // .[0].jd' )"
+#yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'map(select(.space == $YABAI_SPACE_ID))[1].id // map(select(.space == $YABAI_SPACE_ID))[0].id' --argjson YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
+#yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'select(.space == $YABAI_SPACE_ID).id' --arg YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m config external_bar               all:0:39
 
@@ -54,6 +57,7 @@ yabai -m rule --add app="^Activity Monitor$"  manage=off
 yabai -m rule --add app="^TeamViewer$"  manage=off
 yabai -m rule --add app="Fantastical" manage=off
 yabai -m rule --add app="^Finder$"
+yabai -m rule --add title="Microsoft Teams Notification"
 #yabai -m rule --add app="^Spotify$" manage=off
 #yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Age of Empires$" manage=off

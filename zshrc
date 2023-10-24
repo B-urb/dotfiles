@@ -23,7 +23,17 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 #ZSH_THEME="agnoster" # (this is one of the fancy ones)
-
+# style for fzf-tab
+# # disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 
 # list of completers to use
@@ -82,10 +92,10 @@ setopt INC_APPEND_HISTORY
 zinit light junegunn/fzf
 zinit light Aloxaf/fzf-tab
 zinit for \
-    light-mode zsh-users/zsh-autosuggestions  \
 zdharma-continuum/fast-syntax-highlighting \
                 zdharma-continuum/history-search-multi-word \
-                marlonrichert/zsh-autocomplete 
+               # marlonrichert/zsh-autocomplete 
+   # light-mode zsh-users/zsh-autosuggestions  \
 
 zinit load Dbz/kube-aliases
 #zinit load ahmetb/kubectx
