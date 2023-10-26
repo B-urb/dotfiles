@@ -82,6 +82,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 zinit snippet OMZP::git
 # zinit cdclear -q # <- forget completions provided up to this moment
 
+autoload -Uz compinit
+compinit
 
 ##setup history
 HISTFILE=~/.zsh_history
