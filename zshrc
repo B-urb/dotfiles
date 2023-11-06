@@ -91,16 +91,19 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 
+
 zinit light junegunn/fzf
 zinit light Aloxaf/fzf-tab
 zinit for \
 zdharma-continuum/fast-syntax-highlighting \
-                zdharma-continuum/history-search-multi-word \
+               # zdharma-continuum/history-search-multi-word \
                # marlonrichert/zsh-autocomplete 
    # light-mode zsh-users/zsh-autosuggestions  \
 
 zinit load Dbz/kube-aliases
 #zinit load ahmetb/kubectx
+zinit load atuinsh/atuin
+#source<(atuin gen-completions --shell zsh)
 
 
 zinit from'gh-r' as'program' for \
@@ -197,3 +200,5 @@ unset __conda_setup
 export K9S_EDITOR=nvim
 export EDITOR=nvim
 export PICO_SDK_PATH="$HOME/Private/Development/embedded/pico-sdk"
+
+eval "$(atuin init zsh)"
