@@ -32,6 +32,12 @@
     ~/.kube/config:
         path: kube/config
         create: true
+    ~/.newsboat/urls:
+        path: newsboat/urls
+        create: true
+    ~/.wezterm.lua:
+        path: .wezterm.lua
+        create: true
     ~/.config/nvim:
         path: config/nvim
         create: true
