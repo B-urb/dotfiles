@@ -6,6 +6,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config layout bsp
 
 yabai -m signal --add event=space_changed action='~/.config/yabai/focus_space_window.sh $YABAI_SPACE_ID'
+yabai -m signal --add event=window_destroyed action="'~/.config/yabai/window-focus-on-destroy.sh"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[1].id // .[0].jd' )"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'map(select(.space == $YABAI_SPACE_ID))[1].id // map(select(.space == $YABAI_SPACE_ID))[0].id' --argjson YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'select(.space == $YABAI_SPACE_ID).id' --arg YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"

@@ -41,6 +41,9 @@
     ~/.config/nvim:
         path: config/nvim
         create: true
+    ~/.config/atuin:
+        path: config/atuin
+        create: true
     ~/.ideavimrc: ideavimrc
 #    ~/Library/Application\ Support/JetBrains/:
 #        if: '[ `uname` = Darwin ]'

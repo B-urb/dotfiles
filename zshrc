@@ -182,6 +182,7 @@ eval "$(starship init zsh)"
 export PATH=$PATH:$HOME/.pulumi/bin
 
 
+export PATH=$PATH:$HOME/Tools
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
