@@ -110,6 +110,10 @@ zinit from'gh-r' as'program' for \
     id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
     id-as'kubens' bpick'kubens*' ahmetb/kubectx \
 
+
+#zinit ice depth=1
+#zinit light jeffreytse/zsh-vi-mode
+
 #setopt promptsubst
 
 # Load Prompt
@@ -180,6 +184,9 @@ eval "$(starship init zsh)"
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+export PATH=$PATH:$HOME/.rustup
+export PATH=$PATH:$HOME/.cargo
+export PATH=$PATH:$HOME/.cargo/bin
 
 
 export PATH=$PATH:$HOME/Tools

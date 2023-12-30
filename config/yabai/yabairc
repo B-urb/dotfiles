@@ -83,8 +83,8 @@ yabai -m rule --add app="^Private Internet Access$" manage=off
 #yabai -m config window_opacity off
 yabai -m config window_shadow off
 yabai -m config window_opacity_duration 0.00
-yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.9
+#yabai -m config active_window_opacity 1.0
+#yabai -m config normal_window_opacity 0.9
 #yabai -m config normal_window_opacity        0.97
 #yabai -m config window_border                on | off
 
@@ -97,10 +97,6 @@ yabai -m config normal_window_opacity 0.9
 #yabai -m config active_window_border_color 0xFF40FF00
 #yabai -m config normal_window_border_color 0x00FFFFFF
 #yabai -m config insert_feedback_color        0xffd75f5f
-yabai -m config window_opacity                on
-yabai -m config active_window_opacity         1.0
-yabai -m config normal_window_opacity         0.9
-yabai -m config window_opacity_duration       0.0
 
 ## some other settings
 yabai -m config auto_balance off
