@@ -22,6 +22,7 @@ yabai -m space 6 --label music
 
 #specific layout for chat space
 yabai -m config --space chat layout stack
+yabai -m config --space todo layout stack
 
 
 #assign apps to certain space
@@ -40,6 +41,8 @@ yabai -m rule --add app="Logseq" space=todo
 yabai -m rule --add app="Discord" space=chat
 yabai -m rule --add app="Calendar" space=todo
 yabai -m rule --add app="Notion" space=todo
+yabai -m rule --add app="Notes" space=todo
+yabai -m rule --add app="Reminders" space=todo
 
 
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
