@@ -145,7 +145,17 @@ VAULT_TOKEN=s.tOn5oFLq6NGRwvGJcJS4oKWh
 QI_SDK_PREFIX=~/tools/naoqi
 
 # autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS system
+  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+elif [[ -e /etc/os-release ]]; then
+  # Source os-release to check for Arch Linux
+  . /etc/os-release
+  if [[ "$ID" == "arch" ]]; then
+    # Arch Linux system
+    [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+  fi
+fi
 source <(kubectl completion zsh)
 
 
