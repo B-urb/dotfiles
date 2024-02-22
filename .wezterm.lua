@@ -17,7 +17,7 @@ config.color_scheme = 'Material (Gogh)'
 
 
 
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
+config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 4000 }
 -- config.leader = { key = 'Space', mods = 'CTRL' }
 
 config.keys = {
@@ -46,7 +46,7 @@ config.keys = {
     mods = 'LEADER',
     action = act.ActivateKeyTable {
       name = 'activate_pane',
-      timeout_milliseconds = 1000,
+      timeout_milliseconds = 2000,
     },
   },
 }

@@ -1,3 +1,7 @@
+Host *
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/id_rsa
 Host webserver
 	HostName ec2-3-123-22-142.eu-central-1.compute.amazonaws.com
 	User ubuntu

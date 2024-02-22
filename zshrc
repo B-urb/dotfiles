@@ -158,6 +158,15 @@ elif [[ -e /etc/os-release ]]; then
 fi
 source <(kubectl completion zsh)
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    ssh-add --apple-use-keychain ~/.ssh/id_rsa 
+elif [[ "$(uname)" == "Linux" ]]; then
+    echo "This is a Linux system."
+else
+    echo "This is neither Mac nor Linux."
+fi
+
+
 
 function lg() {
     git add --all
