@@ -140,8 +140,6 @@ alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir
 alias python="python3"
 eval $(thefuck --alias)
 alias vim="nvim"
-VAULT_ADDR=https://vault.smart-building.inovex.io
-VAULT_TOKEN=s.tOn5oFLq6NGRwvGJcJS4oKWh
 QI_SDK_PREFIX=~/tools/naoqi
 
 # autojump
