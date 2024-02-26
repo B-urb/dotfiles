@@ -25,6 +25,7 @@
         path: ssh/config
         create: true
     ~/.zshrc: zshrc
+    ~/kubectl_aliases: kubectl_aliases
     ~/.config/i3:
         if: '[ `uname` = Linux ]'
         path: config/i3/

@@ -1,4 +1,3 @@
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -7,6 +6,7 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
@@ -34,7 +34,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
-
 
 # list of completers to use
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
@@ -73,7 +72,6 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
-
 ## Zinit Setting
 # Must Load OMZ Git library
 # zinit snippet OMZL::git.zsh
@@ -99,8 +97,7 @@ zdharma-continuum/fast-syntax-highlighting \
                # zdharma-continuum/history-search-multi-word \
                # marlonrichert/zsh-autocomplete 
    # light-mode zsh-users/zsh-autosuggestions  \
-
-zinit load Dbz/kube-aliases
+#zinit load Dbz/kube-aliases
 #zinit load ahmetb/kubectx
 zinit load atuinsh/atuin
 #source<(atuin gen-completions --shell zsh)
@@ -109,7 +106,6 @@ zinit load atuinsh/atuin
 zinit from'gh-r' as'program' for \
     id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
     id-as'kubens' bpick'kubens*' ahmetb/kubectx \
-
 
 #zinit ice depth=1
 #zinit light jeffreytse/zsh-vi-mode
@@ -140,10 +136,16 @@ alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir
 alias python="python3"
 eval $(thefuck --alias)
 alias vim="nvim"
+source ./kubectl_aliases
 QI_SDK_PREFIX=~/tools/naoqi
 
 # autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS system
+  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+elif [[ "$(uname)" == "Linux" ]]; then
+    [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
+fi
 source <(kubectl completion zsh)
 
 if [[ "$(uname)" == "Darwin" ]]; then
