@@ -1,10 +1,15 @@
 # Prerequisites
 
-install brew on macos
+- install brew on macs
+- run `brew bundle install`
 
 
+# How to use
 
-install lastpass cli
+1. Log in to Bitwarden CLI
+2. `git clone --recursive`
+3. `./install`
 
-execute remotescript eg. sh wget short url
+# About 
 
+My dotfile config with yabai/skhd for macos and i3 on arch. 
