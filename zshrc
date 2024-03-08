@@ -136,7 +136,9 @@ alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir
 alias python="python3"
 eval $(thefuck --alias)
 alias vim="nvim"
-source ./kubectl_aliases
+source ~/kubectl_aliases
+alias kctx=kubectx
+alias kns=kubens
 QI_SDK_PREFIX=~/tools/naoqi
 
 # autojump

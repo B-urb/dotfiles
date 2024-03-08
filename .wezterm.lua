@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local config = {}
 local act = wezterm.action
-config.default_prog =  {"/usr/bin/zsh"}
+-- config.default_prog =  {"/usr/bin/zsh"}
 -- Show which key table is active in the status area
 wezterm.on('update-right-status', function(window, pane)
   local name = window:active_key_table()
