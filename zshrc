@@ -149,6 +149,7 @@ elif [[ "$(uname)" == "Linux" ]]; then
     [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
 fi
 source <(kubectl completion zsh)
+source <(golangci-lint completion zsh)
 
 if [[ "$(uname)" == "Darwin" ]]; then
     ssh-add --apple-use-keychain ~/.ssh/id_rsa 

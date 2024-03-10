@@ -36,8 +36,8 @@
     ~/.newsboat/urls:
         path: newsboat/urls
         create: true
-    ~/.wezterm.lua:
-        path: .wezterm.lua
+    ~/.config/wezterm:
+        path: wezterm
         create: true
     ~/.config/nvim:
         path: config/nvim
