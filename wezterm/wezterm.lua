@@ -17,8 +17,11 @@ config.font = wezterm.font('Monaspace Argon', { weight = 'Bold', italic = false 
 config.color_scheme = 'Material (Gogh)'
 
 config.audible_bell = "Disabled"
-
-
+config.visual_bell = {
+  fade_in_duration_ms = 75,
+  fade_out_duration_ms = 75,
+  target = 'CursorColor',
+}
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 4000 }
 -- config.leader = { key = 'Space', mods = 'CTRL' }
 
