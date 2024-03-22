@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = {}
 local act = wezterm.action
 local workspace = require 'workspace'
-workspace.apply_to_config(config)
+
 -- config.default_prog =  {"/usr/bin/zsh"}
 -- Show which key table is active in the status area
 wezterm.on('update-right-status', function(window, pane)
@@ -96,5 +96,6 @@ config.key_tables = {
     { key = 'j',          action = act.ActivatePaneDirection 'Down' },
   },
 }
+workspace.apply_to_config(config)
 
 return config

@@ -1,12 +1,16 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 local module = {}
+local session_manager = require("wezterm-session-manager/session-manager")
 
 function module.apply_to_config(config)
-  wezterm.on('update-right-status', function(window, pane)
-    window:set_right_status(window:active_workspace())
-  end)
-
+--   wezterm.on('update-right-status', function(window, pane)
+--     window:set_right_status(window:active_workspace())
+--   end)
+--
+-- wezterm.on("save_session", function(window) session_manager.save_state(window) end)
+-- wezterm.on("load_session", function(window) session_manager.load_state(window) end)
+-- wezterm.on("restore_session", function(window) session_manager.restore_state(window) end)
   config.keys = {
     -- Switch to the default workspace
     {
@@ -38,9 +42,12 @@ function module.apply_to_config(config)
         flags = 'FUZZY|WORKSPACES',
       },
     },
+   -- {key = "S", mods = "LEADER", action = wezterm.action{EmitEvent = "save_session"}},
+   -- {key = "L", mods = "LEADER", action = wezterm.action{EmitEvent = "load_session"}},
+   -- {key = "R", mods = "LEADER", action = wezterm.action{EmitEvent = "restore_session"}},
     {
-      key = 'W',
-      mods = 'CTRL|SHIFT',
+      key = 'w',
+      mods = 'LEADER',
       action = act.PromptInputLine {
         description = wezterm.format {
           { Attribute = { Intensity = 'Bold' } },
@@ -63,6 +70,7 @@ function module.apply_to_config(config)
       },
     },
   }
+  return config
 end
 
 -- return our module table

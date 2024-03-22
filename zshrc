@@ -132,7 +132,11 @@ alias du="dua"
 alias dig="dog"
 alias cat="bat"
 alias rm="rip"
-alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
+#alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
+function dklocal() {
+    docker run --rm -it -v "${PWD}:/usr/workdir" --workdir=/usr/workdir "$@"
+}
+
 alias python="python3"
 eval $(thefuck --alias)
 alias vim="nvim"
