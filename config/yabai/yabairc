@@ -2,6 +2,8 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
+JB_Apps='^(CLion|PyCharm|IntelliJ IDEA)$'
+
 # bsp or float (default: bsp)
 yabai -m config layout bsp
 
@@ -29,7 +31,9 @@ yabai -m config --space todo layout stack
 yabai -m rule --add app="Microsoft Teams" space=chat
 yabai -m rule --add app="Slack" space=chat
 yabai -m rule --add app="Iterm2" space=term
-yabai -m rule --add app="IntelliJ IDEA" space=code
+yabai -m rule --add app="${JB_Apps}" title="^$"  space=code
+#yabai -m rule --add app="IntelliJ IDEA" space=code
+#yabai -m rule --add app="IntelliJ IDEA" title=".*\[(.*)\].*" space=code
 yabai -m rule --add app="Firefox" space=www
 yabai -m rule --add app="Safari" space=www
 yabai -m rule --add app="Arc" space=www
@@ -42,11 +46,18 @@ yabai -m rule --add app="Discord" space=chat
 yabai -m rule --add app="Calendar" space=todo
 yabai -m rule --add app="Notion" space=todo
 yabai -m rule --add app="Notes" space=todo
+yabai -m rule --add app="^Outlook$" space=todo
 yabai -m rule --add app="Reminders" space=todo
+#yabai -m rule --add app="Sharing Indicator" manage=off
+
 
 
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
+yabai -m rule --add app="${JB_Apps}" manage=off
+# If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
+# yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on 
+yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
 yabai -m rule --add app="^System Preferences$"  manage=off
 yabai -m rule --add app="^System Setting$"  manage=off
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
@@ -61,7 +72,7 @@ yabai -m rule --add app="^Activity Monitor$"  manage=off
 yabai -m rule --add app="^TeamViewer$"  manage=off
 yabai -m rule --add app="Fantastical" manage=off
 yabai -m rule --add app="^Finder$"
-yabai -m rule --add title="Microsoft Teams Notification"
+#yabai -m rule --add title="Microsoft Teams Notification"
 #yabai -m rule --add app="^Spotify$" manage=off
 #yabai -m rule --add app="^iTerm2$" manage=off
 yabai -m rule --add app="^Age of Empires$" manage=off
@@ -116,13 +127,14 @@ yabai -m config mouse_action1 move
 ## Change how yabai looks
 yabai -m config top_padding 3
 yabai -m config bottom_padding 3
-yabai -m config left_padding 40
+yabai -m config left_padding 30
 yabai -m config right_padding 3
-yabai -m config window_gap 5
+yabai -m config window_gap 10
 
 ## If I close the active window, focus on any other visible window.
 #yabai -m signal --add event=window_destroyed action="bash /Users/jesseskelton/CustomScripts/SwitchSpaces/window-focus-on-destroy.sh"
 # yabai -m signal --add event=space_changed action="export CUR_ACTIVE_APP=\"iTerm2\""
+#
 borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 2>/dev/null 1>&2 &
 
 echo "yabai configuration loaded.."

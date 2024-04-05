@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local utils = require("utils")
 local act = wezterm.action
 local module = {}
 local session_manager = require("wezterm-session-manager/session-manager")
@@ -11,7 +12,7 @@ function module.apply_to_config(config)
 -- wezterm.on("save_session", function(window) session_manager.save_state(window) end)
 -- wezterm.on("load_session", function(window) session_manager.load_state(window) end)
 -- wezterm.on("restore_session", function(window) session_manager.restore_state(window) end)
-  config.keys = {
+  keys = {
     -- Switch to the default workspace
     {
       key = 'y',
@@ -70,6 +71,7 @@ function module.apply_to_config(config)
       },
     },
   }
+ config.keys = utils.merge_lists(config.keys, keys)
   return config
 end
 

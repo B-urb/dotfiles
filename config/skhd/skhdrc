@@ -24,12 +24,12 @@ cmd + lshift + alt + ctrl - y : yabai -m window --swap west
 #resize
 
 # defines a new mode 'resize' with an on_enter command, that captures keypresses
-:: resize @ : yabai -m config active_window_opacity 1; yabai -m config normal_window_opacity 0.9;
+:: resize @
 
 # from 'default' mode, activate mode 'resize'
 # (this is the key combination you want to use to enter resize mode)
 ctrl - escape ; resize 
-alt + ctrl - 0x32 ; resize
+cmd + rshift - r ; resize
 
 # from 'resize' mode, activate mode 'default'
 # (this is the keypress required to leave resize mode)
@@ -94,12 +94,13 @@ cmd + lshift + alt + ctrl - v: yabai -m window --insert east
 #cmd + lshift + alt + ctrl - h: yabai -m window --insert south
 
 # focus spaces
-cmd + lshift + alt + ctrl - 1: yabai -m space --focus term #; yabai -m window --focus next
-cmd + lshift + alt + ctrl - 2: yabai -m space --focus code #; yabai -m window --focus next
-cmd + lshift + alt + ctrl - 3: yabai -m space --focus www #; yabai -m window --focus next
-cmd + lshift + alt + ctrl - 4: yabai -m space --focus chat #; yabai -m window --focus next
-cmd + lshift + alt + ctrl - 5: yabai -m space --focus todo #; yabai -m window --focus next
-cmd + lshift + alt + ctrl - 6: yabai -m space --focus music #; yabai -m window --focus next
+# UNCOMMENT WHEN SIP IS DISABLED
+#cmd + lshift + alt + ctrl - 1: yabai -m space --focus term #; yabai -m window --focus next
+#cmd + lshift + alt + ctrl - 2: yabai -m space --focus code #; yabai -m window --focus next
+#cmd + lshift + alt + ctrl - 3: yabai -m space --focus www #; yabai -m window --focus next
+#cmd + lshift + alt + ctrl - 4: yabai -m space --focus chat #; yabai -m window --focus next
+#cmd + lshift + alt + ctrl - 5: yabai -m space --focus todo #; yabai -m window --focus next
+#cmd + lshift + alt + ctrl - 6: yabai -m space --focus music #; yabai -m window --focus next
 
 ##Move Focus:
 cmd + lshift + alt + ctrl - left  : yabai -m window --focus west
