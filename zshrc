@@ -31,7 +31,7 @@ zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
@@ -125,7 +125,7 @@ zinit from'gh-r' as'program' for \
 #aliases and functions
 alias kb="kubectl"
 alias res="source ~/.zshrc"
-alias ls="exa"
+alias ls="eza"
 alias htop="bpytop"
 alias ping="gping"
 alias du="dua"
@@ -154,6 +154,7 @@ elif [[ "$(uname)" == "Linux" ]]; then
 fi
 source <(kubectl completion zsh)
 source <(golangci-lint completion zsh)
+source <(kubebuilder completion zsh)
 
 if [[ "$(uname)" == "Darwin" ]]; then
     ssh-add --apple-use-keychain ~/.ssh/id_rsa 
@@ -203,6 +204,8 @@ export PATH=$PATH:$HOME/.pulumi/bin
 export PATH=$PATH:$HOME/.rustup
 export PATH=$PATH:$HOME/.cargo
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH="/opt/homebrew/opt/go@1.21/bin:$PATH"
+#export PATH=$(go env GOPATH)/bin:$PATH
 
 
 export PATH=$PATH:$HOME/Tools
@@ -224,5 +227,9 @@ unset __conda_setup
 export K9S_EDITOR=nvim
 export EDITOR=nvim
 export PICO_SDK_PATH="$HOME/Private/Development/embedded/pico-sdk"
+export CGO_ENABLED=1
+#export GOPATH="$HOME/code/go/"
+export GODEBUG='netdns=cgo'
+export GOPRIVATE="dev.azure.com"
 
 eval "$(atuin init zsh)"

@@ -13,7 +13,7 @@ yabai -m signal --add event=space_changed action='~/.config/yabai/focus_space_wi
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'map(select(.space == $YABAI_SPACE_ID))[1].id // map(select(.space == $YABAI_SPACE_ID))[0].id' --argjson YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'select(.space == $YABAI_SPACE_ID).id' --arg YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m config external_bar               all:0:39
+yabai -m config external_bar               all:39:0
 
 yabai -m space 1 --label term
 yabai -m space 2 --label code
@@ -47,6 +47,8 @@ yabai -m rule --add app="Calendar" space=todo
 yabai -m rule --add app="Notion" space=todo
 yabai -m rule --add app="Notes" space=todo
 yabai -m rule --add app="^Outlook$" space=todo
+yabai -m rule --add app="^OneNote$" space=todo
+yabai -m rule --add app="^Todoist$" space=todo
 yabai -m rule --add app="Reminders" space=todo
 #yabai -m rule --add app="Sharing Indicator" manage=off
 
@@ -54,7 +56,7 @@ yabai -m rule --add app="Reminders" space=todo
 
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
-yabai -m rule --add app="${JB_Apps}" manage=off
+#yabai -m rule --add app="${JB_Apps}" manage=off
 # If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
 # yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on 
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on

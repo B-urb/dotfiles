@@ -2,7 +2,7 @@
 
 CONFIGS=""
 SEPARATOR=":"
-OUTPUT_DIR="../" # directory where you want to save the merged config
+OUTPUT_DIR=".." # directory where you want to save the merged config
 MERGE_SCRIPT_NAME="merge_clusters.sh" # script filename itself to exclude from merging
 OUTPUT_FILE_NAME="config" # name of the merged config file
 
