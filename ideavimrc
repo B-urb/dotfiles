@@ -1,1 +1,4 @@
 set commentary
+set surround
+set NERDTree
+

@@ -56,9 +56,9 @@ yabai -m rule --add app="Reminders" space=todo
 
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
-#yabai -m rule --add app="${JB_Apps}" manage=off
+yabai -m rule --add app="${JB_Apps}" manage=off
 # If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
-# yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on 
+yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on 
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
 yabai -m rule --add app="^System Preferences$"  manage=off
 yabai -m rule --add app="^System Setting$"  manage=off
