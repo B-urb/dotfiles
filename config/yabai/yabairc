@@ -7,7 +7,7 @@ JB_Apps='^(CLion|PyCharm|IntelliJ IDEA)$'
 # bsp or float (default: bsp)
 yabai -m config layout bsp
 
-yabai -m signal --add event=space_changed action='~/.config/yabai/focus_space_window.sh $YABAI_SPACE_ID'
+##abai -m signal --add event=space_changed action='~/.config/yabai/focus_space_window.sh $YABAI_SPACE_ID'
 #yabai -m signal --add event=window_destroyed action='~/.config/yabai/window-focus-on-destroy.sh'
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq '.[1].id // .[0].jd' )"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'map(select(.space == $YABAI_SPACE_ID))[1].id // map(select(.space == $YABAI_SPACE_ID))[0].id' --argjson YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
@@ -21,6 +21,8 @@ yabai -m space 3 --label www
 yabai -m space 4 --label chat
 yabai -m space 5 --label todo
 yabai -m space 6 --label music
+yabai -m space 7 --label spare1
+yabai -m space 8 --label spare2
 
 #specific layout for chat space
 yabai -m config --space chat layout stack

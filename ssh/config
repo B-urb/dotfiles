@@ -2,17 +2,3 @@ Host *
     UseKeychain yes
     AddKeysToAgent yes
     IdentityFile ~/.ssh/id_rsa
-Host webserver
-	HostName ec2-3-123-22-142.eu-central-1.compute.amazonaws.com
-	User ubuntu
-	IdentityFile /home/burban/Private/Development/keys/WebserverSite.pem
-Host worker1
-        Hostname 185.113.124.117
-        User ubuntu
-	#IdentityFile /home/burban/.ssh/id_rsa.pub
-
-Host worker2
-        Hostname 192.168.0.122
-        User ubuntu
-	#IdentityFile /home/burban/.ssh/id_rsa.pub
-	ProxyJump worker1

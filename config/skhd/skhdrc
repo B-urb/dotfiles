@@ -88,6 +88,7 @@ cmd + lshift + alt + ctrl - f : yabai -m window --toggle zoom-fullscreen
 #Layouts
 cmd + lshift + alt + ctrl - e : yabai -m space --layout bsp
 #cmd + lshift + alt + ctrl - l : yabai -m space --layout float
+cmd + lshift + alt + ctrl - space : yabai -m space --layout float
 cmd + lshift + alt + ctrl - s : yabai -m space --layout stack
 
 cmd + lshift + alt + ctrl - v: yabai -m window --insert east
@@ -119,6 +120,8 @@ cmd + lshift + alt + ctrl + rshift - 3 : yabai -m window --space www
 cmd + lshift + alt + ctrl + rshift - 4 : yabai -m window --space chat
 cmd + lshift + alt + ctrl + rshift - 5 : yabai -m window --space todo
 cmd + lshift + alt + ctrl + rshift - 6 : yabai -m window --space music
+cmd + lshift + alt + ctrl + rshift - 7 : yabai -m window --space spare1
+cmd + lshift + alt + ctrl + rshift - 8 : yabai -m window --space spare2
 
 
 cmd + lshift + alt + ctrl + rshift - left : ~/.config/skhd/stackwindow.sh west #yabai -m window --warp west #|| yabai -m window --swap west #|| $(yabai -m window --display west; yabai -m display --focus west)

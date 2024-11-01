@@ -103,12 +103,17 @@ zinit load atuinsh/atuin
 #source<(atuin gen-completions --shell zsh)
 
 
+
 zinit from'gh-r' as'program' for \
     id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
     id-as'kubens' bpick'kubens*' ahmetb/kubectx \
 
-#zinit ice depth=1
-#zinit light jeffreytse/zsh-vi-mode
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
+# bindkey -M vicmd v edit-command-line
+# autoload -Uz edit-command-line
+# zle -N edit-command-line
 
 #setopt promptsubst
 
@@ -121,6 +126,7 @@ zinit from'gh-r' as'program' for \
 #bindkey '^[[1;5D' backward-kill-word
 #bindkey '^[^[[C' forward-word   #control left
 #bindkey '^[^[[D' backward-kill-word
+
 
 #aliases and functions
 alias kb="kubectl"
@@ -197,7 +203,13 @@ fuzzy_search() {
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 
-eval "$(starship init zsh)"
+# Check that the function `starship_zle-keymap-select()` is defined.
+# xref: https://github.com/starship/starship/issues/3418
+type starship_zle-keymap-select >/dev/null || \
+  {
+    echo "Load starship"
+    eval "$(starship init zsh)"
+  }
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin

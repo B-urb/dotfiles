@@ -1,25 +1,21 @@
 format = """
-[](#9A348E)\
 $directory\
-[](fg:#9A348E bg:red)\
-$kubernetes\
-[](bg:#DA627D fg:red)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
 $c\
 $golang\
 $java\
 $nodejs\
-$rust\
-[](fg:#06969A bg:#33658A)\
-$time\
-[ ](fg:#33658A) \n \
+$rust \n
 ❯
 """
 
+right_format = """
+$kubernetes\
+"""
+
 [directory]
-style = "bg:#9A348E"
+style = "fg:green"
 format = "[$path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -31,40 +27,39 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"work" = "󰃖"
+"code" = "󰈮"
 
 [c]
 symbol = " "
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
+[env_var.VIMSHELL]
+format = "[$env_value]($style)"
+style = 'green italic'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
-format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+format = '[($all_status$ahead_behind )]($style)'
 
 [golang]
 symbol = " "
 style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [java]
 symbol = " "
-style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 
 [time]
@@ -74,9 +69,9 @@ style = "bg:#33658A"
 format = '[[ ♥ $time ](bg:#33658A) ]($style)'
 
 [kubernetes]
-format = '[[ ⛵ $context \($namespace\) ](bg:red)]($style)'
+format = '[ ⛵ $context\($namespace\)]($style)'
 disabled = false
-style="bg:red"
+style="white"
 [kubernetes.context_aliases]
 "dev-mips-ql" = "mips"
 "minikube" = "mk"
