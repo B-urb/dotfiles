@@ -48,19 +48,18 @@ format = '[($all_status$ahead_behind )]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#86BBD8"
 
 [java]
 symbol = " "
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+format = '[ $symbol ($version)]($style)'
 
 [time]
 disabled = false

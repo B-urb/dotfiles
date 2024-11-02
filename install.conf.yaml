@@ -56,6 +56,7 @@
 #        path: JetBrains/
 #        create: true
     ~/.config/starship.toml: starship.toml
+    ~/.aerospace.toml: aerospace.toml
     ~/.gradle/gradle.properties: gradle.properties
     ~/.config/yabai:
         if: '[ `uname` = Darwin ]'

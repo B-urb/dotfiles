@@ -29,10 +29,10 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   local dim_foreground = "#000000"
 
   if tab.is_active then
-    background = "#FBB829"
+    background = "#90EE90"
     foreground = "#1C1B19"
   elseif hover then
-    background = "#FF8700"
+    background = "#32CD32"
     foreground = "#1C1B19"
   end
 
@@ -105,11 +105,6 @@ local config = {
   show_close_tab_button_in_tab_bar = false,
 
   tab_bar_style = {
-    inactive_tab_right = wezterm.format {
-      { Background = { Color = '#0b0022' } },
-      { Foreground = { Color = '#1b1032' } },
-      { Text = "" },
-    },
   },
   colors = {
     tab_bar = {
