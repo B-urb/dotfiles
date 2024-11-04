@@ -1,13 +1,14 @@
 format = """
-$directory\
+$hostname \
 $git_branch\
 $git_status\
 $c\
 $golang\
 $java\
 $nodejs\
-$rust \n
-❯
+$rust 
+$env_var@$directory \
+❯ 
 """
 
 right_format = """
@@ -15,8 +16,8 @@ $kubernetes\
 """
 
 [directory]
-style = "fg:green"
-format = "[$path ]($style)"
+style = "fg:#FFFFFF"
+format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -33,11 +34,19 @@ truncation_symbol = "…/"
 [c]
 symbol = " "
 style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [env_var.VIMSHELL]
 format = "[$env_value]($style)"
 style = 'green italic'
+
+[env_var.ZVM_MODE]
+format = "[$env_value]($style)"
+style = 'green italic'
+
+[env_var.USER]
+format = "[$env_value]($style)"
+style = '#FF13F0 italic'
 
 [git_branch]
 symbol = ""
@@ -70,7 +79,7 @@ format = '[[ ♥ $time ](bg:#33658A) ]($style)'
 [kubernetes]
 format = '[ ⛵ $context\($namespace\)]($style)'
 disabled = false
-style="white"
+style="#2E6DE7"
 [kubernetes.context_aliases]
 "dev-mips-ql" = "mips"
 "minikube" = "mk"

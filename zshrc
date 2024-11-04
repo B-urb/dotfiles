@@ -163,7 +163,7 @@ source <(golangci-lint completion zsh)
 source <(kubebuilder completion zsh)
 
 if [[ "$(uname)" == "Darwin" ]]; then
-    ssh-add --apple-use-keychain ~/.ssh/id_rsa 
+   nohup ssh-add --apple-use-keychain ~/.ssh/id_rsa > /dev/null 2>&1 & disown
 elif [[ "$(uname)" == "Linux" ]]; then
     echo "This is a Linux system."
 else
@@ -236,12 +236,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export K9S_EDITOR=nvim
 export EDITOR=nvim
+export ZVM_VI_EDITOR=nvim
+export K9S_EDITOR=nvim
 export PICO_SDK_PATH="$HOME/Private/Development/embedded/pico-sdk"
 export CGO_ENABLED=1
 #export GOPATH="$HOME/code/go/"
 export GODEBUG='netdns=cgo'
 export GOPRIVATE="dev.azure.com"
 
-eval "$(atuin init zsh)"
