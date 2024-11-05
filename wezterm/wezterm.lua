@@ -113,6 +113,7 @@ local config = {
       new_tab_hover = { bg_color = "#000000", fg_color = "#FCE8C3", intensity = "Bold" },
       active_tab = { bg_color = "#000000", fg_color = "#FCE8C3" },
       inactive_tab = { bg_color = "#000000", fg_color = "#FCE8C3" },
+      inactive_tab_edge = "#000000",
       inactive_tab_hover = { bg_color = "#000000", fg_color = "#FCE8C3" }
     }
   },
