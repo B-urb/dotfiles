@@ -96,20 +96,21 @@ for workspace_index = 1, max_workspaces do
     updateWindows(workspace_index)
   end)
 
-  -- workspace:subscribe("mouse.clicked", function(env)
-  --   if env.BUTTON == "other" then
-  --     space_popup:set({ background = { image = "space." .. env.SID } })
-  --     space:set({ popup = { drawing = "toggle" } })
-  --   else
-  --     local op = "--focus"
-  --     sbar.exec("yabai -m space " .. op .. " " .. env.SID)
-  --   end
-  -- end)
 
-  space:subscribe("mouse.exited", function(_)
-    space:set({ popup = { drawing = false } })
-  end)
-end
+  --   space:subscribe("mouse.clicked", function(env)
+  --     if env.BUTTON == "other" then
+  --       space_popup:set({ background = { image = "space." .. env.SID } })
+  --       space:set({ popup = { drawing = "toggle" } })
+  --     else
+  --       local op = "--focus"
+  --       sbar.exec("yabai -m space " .. op .. " " .. env.SID)
+  --     end
+  --   end)
+  --
+  --   space:subscribe("mouse.exited", function(_)
+  --     space:set({ popup = { drawing = false } })
+  --   end)
+  -- end
 
   -- initial setup
   updateWindows(workspace_index)
