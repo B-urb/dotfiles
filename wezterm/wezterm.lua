@@ -132,12 +132,12 @@ local config = {
     -- be potentially recognized and handled by the tab
     {
       key = 'v',
-      mods = 'SHIFT|ALT',
+      mods = 'LEADER',
       action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
     {
       key = 'h',
-      mods = 'SHIFT|ALT',
+      mods = 'LEADER',
       action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     {
@@ -153,7 +153,8 @@ local config = {
       mods = 'LEADER',
       action = act.ActivateKeyTable {
         name = 'activate_pane',
-        timeout_milliseconds = 2000,
+        timeout_milliseconds = 8000,
+        one_shot = false
       },
     },
   },
@@ -196,6 +197,8 @@ local config = {
 
       { key = 'DownArrow',  action = act.ActivatePaneDirection 'Down' },
       { key = 'j',          action = act.ActivatePaneDirection 'Down' },
+
+      { key = 'Escape',     action = 'PopKeyTable' },
     },
   }
 }

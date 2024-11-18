@@ -8,7 +8,7 @@ $java\
 $nodejs\
 $rust 
 $env_var@$directory \
-❯ 
+($cmd_duration) $status 
 """
 
 right_format = """
@@ -88,3 +88,13 @@ style="#2E6DE7"
 [kotlin]
 disabled = false
 
+[status]
+map_symbol = true
+style = "fg:#7CFC00"
+success_symbol = " "
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+disabled = false
+
+[cmd_duration]
+min_time = 500
+format = '[$duration](bold yellow)'
