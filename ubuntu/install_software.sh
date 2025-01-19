@@ -9,27 +9,33 @@ echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez
 sudo apt install ./keyring.deb
 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
 
+# kubectl
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+sudo chmod 644 /etc/apt/keyrings/kubernetes-apt-keyring.gpg # allow unprivileged APT programs to read this keyring
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo chmod 644 /etc/apt/sources.list.d/kubernetes.list   # helps tools such as command-not-found to work correctly
+
 # Update and upgrade the system
 sudo apt update && sudo apt upgrade -y
 
 # Essential development tools
-sudo apt install -y build-essential curl wget git python3 python3-pip python3.10 python3.11 \
+sudo apt install -y build-essential curl wget git \
     gcc g++ make cmake cmake-gui libboost-all-dev libeigen3-dev libusb-1.0-0-dev libpq-dev \
     htop jq neovim vim tmux docker-compose nodejs npm yarn golang-go rustup \
     ffmpeg imagemagick sqlite3 openjdk-11-jdk openjdk-17-jdk maven gradle \
-    fonts-hack-ttf fonts-jetbrains-mono fonts-noto-color-emoji
+    fonts-hack-ttf fonts-jetbrains-mono fonts-noto-color-emoji apt-transport-https ca-certificates curl gnupg
 
 
 # Networking tools
-sudo apt install -y aria2 bandwhich bat dos2unix iputils-ping ifstat net-tools \
-    traceroute telnet sshuttle s3cmd
+sudo apt install -y aria2 bat dos2unix iputils-ping ifstat net-tools \
+    traceroute telnet sshuttle s3cmd kubectl
 
 #i3
 sudo apt install -y i3
 
 # CLI tools
-sudo apt install -y zoxide fd-find ripgrep glances exa fzf dua-cli duf bpytop \
-    act lazygit starship thefuck lsd git-lfs
+sudo apt install -y zoxide fd-find ripgrep glances exa fzf duf bpytop \
+    act lsd git-lfs
 
 # Graphics and multimedia
 sudo apt install -y libjpeg-dev libpng-dev libtiff-dev libwebp-dev libopenjp2-7-dev \
@@ -37,14 +43,12 @@ sudo apt install -y libjpeg-dev libpng-dev libtiff-dev libwebp-dev libopenjp2-7-
     libpango1.0-dev libtbb-dev
 
 # Libraries and scientific tools
-sudo apt install -y python3-numpy python3-scipy python3-matplotlib python3-pandas \
-    libhdf5-dev libnetcdf-dev vtk6
-
+sudo apt install -y \
+    libhdf5-dev libnetcdf-dev
 # Containers and Kubernetes
-sudo apt install -y docker.io minikube kubectl helm
-
+sudo apt install -y docker.io kubectl
 # Version control and CI/CD tools
-sudo apt install -y git git-filter-repo git-lfs commitizen
+sudo apt install -y git git-filter-repo git-lfs
 
 # Vim
 git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
