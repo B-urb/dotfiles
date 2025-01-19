@@ -56,16 +56,55 @@ automatically-unhide-macos-hidden-apps = true
 preset = 'qwerty'
 
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace 1' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+run = 'move-node-to-workspace 2' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 2' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace 3' # mnemonics W - Web browser
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 3' # mnemonics W - Web browser
 
 [[on-window-detected]]
-if.app-id = 'com.jetbrains.intellij'
-run = 'move-node-to-workspace 2' # mnemonics I - IDE
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 4' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace 5' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 5' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 5' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = 'move-node-to-workspace 5' # mnemonics T - Terminal
+
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = 'move-node-to-workspace 7' # mnemonics I - IDE
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace 8' # mnemonics I - IDE
+
+
+
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
@@ -75,11 +114,11 @@ run = 'move-node-to-workspace 2' # mnemonics I - IDE
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
+inner.horizontal = 15
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        45
+outer.top =        50
 outer.right =      10
 
 # 'main' binding mode declaration
@@ -217,7 +256,8 @@ alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-q = 'move-node-to-workspace Q'
 # alt-shift-r = 'move-node-to-workspace R'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-comma = 'move-workspace-to-monitor --wrap-around next'
+alt-shift-period = 'move-workspace-to-monitor --wrap-around next'
 
 alt-shift-c = 'reload-config'
 

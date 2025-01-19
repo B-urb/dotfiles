@@ -1,4 +1,5 @@
 set commentary
 set surround
 set NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
 

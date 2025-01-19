@@ -217,6 +217,9 @@ export PATH=$PATH:$HOME/.rustup
 export PATH=$PATH:$HOME/.cargo
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="/opt/homebrew/opt/go@1.21/bin:$PATH"
+export DYLD_FALLBACK_LIBRARY_PATH="$(xcode-select --print-path)/Toolchains/XcodeDefault.xctoolchain/usr/lib/"
+export LDFLAGS=-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
 #export PATH=$(go env GOPATH)/bin:$PATH
 
 

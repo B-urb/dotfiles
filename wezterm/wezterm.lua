@@ -82,6 +82,7 @@ end)
 --
 local config = {
   font_size = 15.0,
+  -- default_prog = { "nu" },
   font = wezterm.font('Monaspace Argon', { weight = 'Bold', italic = false }),
   color_scheme = 'Astrodark (Gogh)',
   enable_scroll_bar = true,
