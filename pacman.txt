@@ -1,1 +1,0 @@
-exa atuin bat fzf kubectx

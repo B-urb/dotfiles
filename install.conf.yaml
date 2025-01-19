@@ -24,7 +24,14 @@
     ~/.ssh/config:
         path: ssh/config
         create: true
-    ~/.zshrc: zshrc
+    ~/.zshrc:
+        if: '[ `uname` = Darwin ]'
+        path:  macos/zshrc
+        create: true
+        if: '[ `uname` = Linux ]'
+        path: ubuntu/zshrc
+        create: true
+        relink: true
     ~/kubectl_aliases: kubectl_aliases
     ~/.config/i3:
         if: '[ `uname` = Linux ]'
@@ -56,7 +63,10 @@
 #        path: JetBrains/
 #        create: true
     ~/.config/starship.toml: starship.toml
-    ~/.aerospace.toml: aerospace.toml
+    ~/.aerospace.toml:
+        if: '[ `uname` = Darwin ]'
+        path: config/aerospace.toml
+        create: true
     ~/.gradle/gradle.properties: gradle.properties
     ~/.config/yabai:
         if: '[ `uname` = Darwin ]'
