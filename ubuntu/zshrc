@@ -148,7 +148,6 @@ alias vim="nvim"
 source ~/kubectl_aliases
 alias kctx=kubectx
 alias kns=kubens
-QI_SDK_PREFIX=~/tools/naoqi
 
 # autojump
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -162,7 +161,6 @@ source <(kubectl completion zsh)
 if [[ "$(uname)" == "Darwin" ]]; then
    nohup ssh-add --apple-use-keychain ~/.ssh/id_rsa > /dev/null 2>&1 & disown
 elif [[ "$(uname)" == "Linux" ]]; then
-    echo "This is a Linux system."
 else
     echo "This is neither Mac nor Linux."
 fi
@@ -202,11 +200,6 @@ fuzzy_search() {
 
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418
-type starship_zle-keymap-select >/dev/null || \
-  {
-    echo "Load starship"
-    eval "$(starship init zsh)"
-  }
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
@@ -234,7 +227,6 @@ unset __conda_setup
 export EDITOR=nvim
 export ZVM_VI_EDITOR=nvim
 export K9S_EDITOR=nvim
-export PICO_SDK_PATH="$HOME/Private/Development/embedded/pico-sdk"
 export CGO_ENABLED=1
 #export GOPATH="$HOME/code/go/"
 export GODEBUG='netdns=cgo'
@@ -242,3 +234,8 @@ export GOPRIVATE="dev.azure.com"
 
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+type starship_zle-keymap-select >/dev/null || \
+  {
+    echo "Load starship"
+    eval "$(starship init zsh)"
+  }
