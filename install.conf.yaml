@@ -25,11 +25,12 @@
         path: ssh/config
         create: true
     ~/.zshrc:
-        if: '[ `uname` = Darwin ]'
-        path:  macos/zshrc
-        create: true
         if: '[ `uname` = Linux ]'
         path: ubuntu/zshrc
+        create: true
+        relink: true
+        if: '[ `uname` = Darwin ]'
+        path:  macos/zshrc
         create: true
         relink: true
     ~/kubectl_aliases: kubectl_aliases
@@ -67,6 +68,7 @@
         if: '[ `uname` = Darwin ]'
         path: config/aerospace.toml
         create: true
+        relink: true
     ~/.gradle/gradle.properties: gradle.properties
     ~/.config/yabai:
         if: '[ `uname` = Darwin ]'
