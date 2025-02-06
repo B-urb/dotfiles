@@ -1,3 +1,4 @@
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -102,8 +103,6 @@ zdharma-continuum/fast-syntax-highlighting \
 zinit load atuinsh/atuin
 #source<(atuin gen-completions --shell zsh)
 
-
-
 zinit from'gh-r' as'program' for \
     id-as'kubectx' bpick'kubectx*' ahmetb/kubectx \
     id-as'kubens' bpick'kubens*' ahmetb/kubectx \
@@ -127,27 +126,6 @@ zinit light jeffreytse/zsh-vi-mode
 #bindkey '^[^[[C' forward-word   #control left
 #bindkey '^[^[[D' backward-kill-word
 
-
-#aliases and functions
-alias kb="kubectl"
-alias res="source ~/.zshrc"
-alias ls="eza"
-alias htop="bpytop"
-alias ping="gping"
-alias du="dua"
-alias dig="dog"
-alias cat="bat"
-#alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
-function dklocal() {
-    docker run --rm -it -v "${PWD}:/usr/workdir" --workdir=/usr/workdir "$@"
-}
-
-alias python="python3"
-alias vim="nvim"
-source ~/kubectl_aliases
-alias kctx=kubectx
-alias kns=kubens
-
 # autojump
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS system
@@ -156,85 +134,17 @@ elif [[ "$(uname)" == "Linux" ]]; then
     [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
 fi
 source <(kubectl completion zsh)
-
-if [[ "$(uname)" == "Darwin" ]]; then
-   nohup ssh-add --apple-use-keychain ~/.ssh/id_rsa > /dev/null 2>&1 & disown
-elif [[ "$(uname)" == "Linux" ]]; then
-else
-    echo "This is neither Mac nor Linux."
-fi
-
-
-
-function lg() {
-    git add --all
-    git commit --signoff -a -m "$*"
-    git push
-}
-
-function gpa()
-{
-git remote  | xargs -L1 -I R git push R $*
-}
-function clipcopy () {
-pbcopy < "${1:-/dev/stdin}"
-}
-# use to import variables from .env file in local shell
-function srcenv(){
-export $(grep -v '^#' "$*" | xargs)
-}
-
-fuzzy_search() {
-  context_lines=${1:-5}
-  input=$(cat)
-  selected_line=$(echo "$input" | awk -v context_lines=$context_lines 'BEGIN{ORS="\n\n"}{print NR-1 ":", $0}' | fzf --preview "echo {}; awk -v line=$(echo {} | cut -d':' -f1) -v context_lines=$context_lines 'NR >= line-context_lines && NR <= line+context_lines {print \$0}'" | cut -d':' -f1)
-  awk -v line=$selected_line -v context_lines=$context_lines 'NR >= line-context_lines && NR <= line+context_lines {print $0}' <<< "$input" | less
-}
-
-
-# export PATH="/opt/homebrew/anaconda3/bin:$PATH"  # commented out by conda initialize
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
+source <(golangci-lint completion zsh)
+source <(kubebuilder completion zsh)
 
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418
-
-# add Pulumi to the PATH
-export PATH=$PATH:$HOME/.pulumi/bin
-export PATH=$PATH:$HOME/.rustup
-export PATH=$PATH:$HOME/.cargo
-export PATH=$PATH:$HOME/.cargo/bin
-
-
-export PATH=$PATH:$HOME/Tools
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-export EDITOR=nvim
-export ZVM_VI_EDITOR=nvim
-export K9S_EDITOR=nvim
-export CGO_ENABLED=1
-#export GOPATH="$HOME/code/go/"
-export GODEBUG='netdns=cgo'
-export GOPRIVATE="dev.azure.com"
-
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 type starship_zle-keymap-select >/dev/null || \
   {
     echo "Load starship"
     eval "$(starship init zsh)"
   }
+
+export EDITOR=nvim
+export ZVM_VI_EDITOR=nvim
+export K9S_EDITOR=nvim

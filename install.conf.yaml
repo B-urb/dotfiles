@@ -2,6 +2,16 @@
   - command: [cd kube/clusters && ./merge_clusters.sh]
     stdout: true
     stderr: true
+  - command: |
+        case "$(uname -s)" in
+            Darwin)
+                cat zsh/general.zsh zsh/macos.zsh zsh/alias.zsh zsh/functions.zsh zsh/generated.zsh > zshrc
+                ;;
+            Linux)
+                cat zsh/general.zsh zsh/linux.zsh zsh/alias.zsh zsh/functions.zsh zsh/generated.zsh > zshrc
+                ;;
+        esac
+    description: "Merge Zsh configuration into a single .zshrc"
 - clean: ['~','kube']
 - clean:
     ~/:

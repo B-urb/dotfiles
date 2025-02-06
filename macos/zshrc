@@ -137,7 +137,6 @@ alias ping="gping"
 alias du="dua"
 alias dig="dog"
 alias cat="bat"
-alias rm="rip"
 #alias dklocal="docker run --rm -it -v ${PWD}:/usr/workdir --workdir=/usr/workdir"
 function dklocal() {
     docker run --rm -it -v "${PWD}:/usr/workdir" --workdir=/usr/workdir "$@"
