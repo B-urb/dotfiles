@@ -29,6 +29,38 @@ install_bw_cli() {
     fi
 }
 
+install_deps() {
+    echo "Install all dependencies"
+
+    # Detect OS and install
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        if command -v apt &> /dev/null; then
+            ubuntu/install_deps.sh
+        elif command -v dnf &> /dev/null; then
+            sudo dnf install -y bitwarden-cli
+        elif command -v pacman &> /dev/null; then
+            sudo pacman -Sy --noconfirm bitwarden-cli
+        elif command -v zypper &> /dev/null; then
+            sudo zypper install -y bitwarden-cli
+        else
+            echo "Unsupported Linux distribution. Please install Bitwarden CLI manually."
+            exit 1
+        fi
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        brew bundle macos/Brewfile
+    elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
+        windows/install_deps.sh
+    else
+        echo "Unsupported operating system. Please install Bitwarden CLI manually."
+        exit 1
+    fi
+    install_cargo.sh
+    install_extensions.sh
+    install
+}
+
+install_deps
+
 # Check if Bitwarden CLI is installed, otherwise install it
 if ! command -v bw &> /dev/null; then
     install_bw_cli
