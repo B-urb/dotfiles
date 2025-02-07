@@ -32,6 +32,7 @@
     ~/.bash_logout: bash_logout
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
+        if: '[ `uname` = Darwin ]'
         path: ssh/config
         create: true
     ~/.zshrc:
