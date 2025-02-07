@@ -1,6 +1,11 @@
 #!/bin/bash
 
 
+REPO="B-urb/dotfiles"  # Replace with actual repo
+BRANCH="master"
+TEMP_DIR="$(mktemp -d)"
+TARGET_DIR="$HOME/.dotfiles"
+
 # Function to install Bitwarden CLI
 install_bw_cli() {
     echo "Bitwarden CLI not found. Attempting to install..."
@@ -29,13 +34,26 @@ install_bw_cli() {
     fi
 }
 
+get_dotfiles() {
+
+# Download and extract into temp dir
+curl -L "https://github.com/$REPO/archive/$BRANCH.tar.gz" | tar xz -C "$TEMP_DIR"
+
+# Move extracted content to target directory
+mv "$TEMP_DIR/$REPO-$BRANCH" "$TARGET_DIR"
+
+# Cleanup temp directory
+#
+rm -rf "$TEMP_DIR"
+}
+
 install_deps() {
     echo "Install all dependencies"
 
     # Detect OS and install
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         if command -v apt &> /dev/null; then
-            ubuntu/install_deps.sh
+            $TARGET_DIR/ubuntu/install_deps.sh
         elif command -v dnf &> /dev/null; then
             sudo dnf install -y bitwarden-cli
         elif command -v pacman &> /dev/null; then
@@ -47,9 +65,9 @@ install_deps() {
             exit 1
         fi
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        brew bundle macos/Brewfile
+        brew bundle $TARGET_DIR/macos/Brewfile
     elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
-        windows/install_deps.sh
+        $TARGET_DIR/windows/install_deps.sh
     else
         echo "Unsupported operating system. Please install Bitwarden CLI manually."
         exit 1
@@ -59,6 +77,7 @@ install_deps() {
     install
 }
 
+get_dotfiles
 install_deps
 
 # Check if Bitwarden CLI is installed, otherwise install it
