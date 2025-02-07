@@ -21,7 +21,7 @@ check_command curl
 
 get_dotfiles() {
     # Clone the repository directly to the target directory
-    git clone --single-branch --branch "$BRANCH" "git@github.com:$REPO.git" "$TARGET_DIR"
+    git clone --single-branch --branch "$BRANCH" --recursive "git@github.com:$REPO.git" "$TARGET_DIR"
 
     # Optionally, you can run git pull if you want to update it later
     # cd "$TARGET_DIR" && git pull origin "$BRANCH"

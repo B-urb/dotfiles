@@ -70,6 +70,9 @@ sudo apt install -y libjpeg-dev libpng-dev libtiff-dev libwebp-dev libopenjp2-7-
 sudo apt install -y \
     libhdf5-dev libnetcdf-dev
 
+# install wezterm
+sudo apt install wezterm-nightly
+
 # Containers and Kubernetes
 sudo apt install -y docker.io kubectl
 
