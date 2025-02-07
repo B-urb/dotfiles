@@ -58,6 +58,7 @@
     ~/.config/wezterm:
         path: wezterm
         create: true
+        relink: true
     ~/.config/nvim:
         path: config/nvim
         create: true
