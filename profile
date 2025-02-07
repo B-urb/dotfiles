@@ -31,3 +31,4 @@ fi
 export PATH="/Users/bjornurban/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 . "$HOME/.cargo/env"
+. "/Users/bjornurban/.deno/env"

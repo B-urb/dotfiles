@@ -63,6 +63,9 @@
     ~/.config/atuin:
         path: config/atuin
         create: true
+    ~/.config/.gitignore:
+        path: gitignore
+        create: true
     ~/.ideavimrc: ideavimrc
 #    ~/Library/Application\ Support/JetBrains/:
 #        if: '[ `uname` = Darwin ]'
