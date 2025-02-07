@@ -3,3 +3,4 @@ kube/*
 kube/clusters/*
 !kube/clusters/*.sh
 gradle.properties
+ubuntu/keyring.deb
