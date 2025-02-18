@@ -62,6 +62,8 @@
     ~/.config/nvim:
         path: config/nvim
         create: true
+        relink: true
+        force: true
     ~/.config/atuin:
         path: config/atuin
         create: true
