@@ -34,6 +34,7 @@
   "onedarkpro.nvim": { "branch": "main", "commit": "992780fb5b28abcef125271c8c2c41e302c2df26" },
   "persistence.nvim": { "branch": "main", "commit": "f6aad7dde7fcf54148ccfc5f622c6d5badd0cc3d" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "refactoring.nvim": { "branch": "master", "commit": "07e99021f66cad7eb7a6b45921798b0555f00bc3" },
   "snacks.nvim": { "branch": "main", "commit": "57445057395fd1f5b315defa367c57651ea2e5f2" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
