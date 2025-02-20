@@ -1,6 +1,9 @@
 kube/*
 !kube/*/
 kube/clusters/*
+config/k9s/clusters/
+sync.yaml
+zshrc
 !kube/clusters/*.sh
 gradle.properties
 ubuntu/keyring.deb
