@@ -64,6 +64,11 @@
         create: true
         relink: true
         force: true
+    ~/.config/k9s:
+        path: config/k9s
+        create: true
+        relink: true
+        force: true
     ~/.config/atuin:
         path: config/atuin
         create: true

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 JB_Apps='^(CLion|PyCharm|IntelliJ IDEA)$'
 
@@ -13,7 +13,7 @@ yabai -m config layout bsp
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'map(select(.space == $YABAI_SPACE_ID))[1].id // map(select(.space == $YABAI_SPACE_ID))[0].id' --argjson YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 #yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq 'select(.space == $YABAI_SPACE_ID).id' --arg YABAI_SPACE_ID \"$YABAI_SPACE_ID\")"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m config external_bar               all:39:0
+yabai -m config external_bar all:39:0
 
 yabai -m space 1 --label term
 yabai -m space 2 --label code
@@ -25,15 +25,14 @@ yabai -m space 7 --label spare1
 yabai -m space 8 --label spare2
 
 #specific layout for chat space
-yabai -m config --space chat layout stack
-yabai -m config --space todo layout stack
-
+# yabai -m config --space chat layout stack
+# yabai -m config --space todo layout stack
 
 #assign apps to certain space
 yabai -m rule --add app="Microsoft Teams" space=chat
 yabai -m rule --add app="Slack" space=chat
 yabai -m rule --add app="Iterm2" space=term
-yabai -m rule --add app="${JB_Apps}" title="^$"  space=code
+yabai -m rule --add app="${JB_Apps}" title="^$" space=code
 #yabai -m rule --add app="IntelliJ IDEA" space=code
 #yabai -m rule --add app="IntelliJ IDEA" title=".*\[(.*)\].*" space=code
 yabai -m rule --add app="Firefox" space=www
@@ -54,28 +53,26 @@ yabai -m rule --add app="^Todoist$" space=todo
 yabai -m rule --add app="Reminders" space=todo
 #yabai -m rule --add app="Sharing Indicator" manage=off
 
-
-
 #yabai -m rule --add subrole="AXDialog" layer=above manage=off
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="${JB_Apps}" manage=off
 # If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
-yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on 
-yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
-yabai -m rule --add app="^System Preferences$"  manage=off
-yabai -m rule --add app="^System Setting$"  manage=off
+yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
+yabai -m rule --add app="${JB_Apps}" title="^$" manage=on
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^JetBrains Toolbox$" manage=off
 yabai -m rule --add app="Prusa Slicer" manage=off
 yabai -m rule --add app="^Parallels Desktop$" manage=off
 yabai -m rule --add app="Karabiner-Elements" manage=off
-yabai -m rule --add app="^Karabiner-EventViewer$"  manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
-yabai -m rule --add app="^Disk Utility$"  manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
-yabai -m rule --add app="^Activity Monitor$"  manage=off
-yabai -m rule --add app="^TeamViewer$"  manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="Fantastical" manage=off
-yabai -m rule --add app="^Finder$"
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 #yabai -m rule --add title="Microsoft Teams Notification"
 #yabai -m rule --add app="^Spotify$" manage=off
 #yabai -m rule --add app="^iTerm2$" manage=off
@@ -126,7 +123,6 @@ yabai -m config mouse_modifier ctrl
 yabai -m config mouse_action2 resize
 # set modifier + left-click drag to resize window (default: move)
 yabai -m config mouse_action1 move
-
 
 ## Change how yabai looks
 yabai -m config top_padding 3
